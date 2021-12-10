@@ -1,0 +1,64 @@
+# reinventing the weel to check what 
+class array():
+    data = {}
+    size = 0
+    """
+    return the element from array
+    """
+    def at(self,loc):
+        return self.data[loc]
+    """
+    add element to back of an array
+    """
+    def pushBack(self,item):
+        self.data[self.size] = item; 
+        self.size+=1
+    """
+    print array
+    """
+    def printArr(self):
+        print("[",end=" ")
+        for i in self.data:
+            if(i+1 is not self.size):
+                print(self.data[i],end=", ")
+            else:
+                print(self.data[i],end=" ")
+        print("]")
+    """
+    remove element from last and return it
+    """
+    def popBack(self):
+        element = self.data[self.size-1]
+        del self.data[self.size-1]
+        self.size -=1
+        return element
+    """
+    insert an element at given locaiton
+    """
+    def insert(self, item, loc):
+        pass
+
+    def deleteAt(self, loc):
+        self.unShift(loc)
+
+    def unShift(self,loc):
+        #{0:'h',1:'e', 2:'l', 3:'l', 4:'o'}
+        for i in range(loc, self.size-2):
+            
+            print({i:self.data[i]})
+            self.data[i]= self.data[i+1]
+            del self.data[self.size-1]
+            self.size -=1
+
+
+
+
+arr = array()
+arr.pushBack('h')
+arr.pushBack('e')
+arr.pushBack('l')
+arr.pushBack('l')
+arr.pushBack('o')
+arr.printArr()
+arr.deleteAt(2)
+arr.printArr()
