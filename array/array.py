@@ -13,7 +13,7 @@ class array():
     add element to back of an array
     """
     def pushBack(self,item):
-        self.data[self.size] = item; 
+        self.data[self.size] = item 
         self.size+=1
 
     """
